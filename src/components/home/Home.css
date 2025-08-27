@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.hero{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.hero h1 {
+    text-align: center;
+    width: 80%;
+    font-size: 70px;
+    font-weight: 600;
+}
+.hero h1 span{
+    background: linear-gradient(276deg,blue,rgb(255, 4, 4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero p{
+    text-align: center;
+    width: 50%;
+    line-height: 1.5;
+    font-size: 20px;
+    color: rgb(68, 68, 68);
+}
+
+.section-items img{
+    width: 35px;
+}
+.section-items{
+    width: 200px;
+    text-align: center;
+    border: 1px solid rgba(14, 100, 220, 0.252);
+    padding: 30px;
+    border-radius: 20px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow:0px 7px 10px 0px rgba(0, 0, 0, 0.211);
+    z-index: 1000;
+}
+.section1{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.section2{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.button{
+    background-color: rgb(2, 48, 255);
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    transition:0.3s;
+    font-size: 20px;
+}
+.button-white{
+   border: 1px solid #b1fefdba;
+   border-radius:10px ;
+   color: black;
+   padding: 10px 20px;
+   transition:0.3s;
+   font-size: 20px;
+}
+.sec-link{
+    text-decoration: none;
+}
+.button:hover{
+    background-color: rgb(86, 122, 255);
+}
+.button-white:hover{
+   background-color: #e6f8fffc;
+}
+.section3-items img{
+    width: 35px;
+}
+.section3{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.section3-items{
+    text-align: center;
+    border: 1px solid rgba(128, 188, 244, 0.752);
+    padding: 40px 70px ;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.section3-items:hover{
+     transform: scale(1.1);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.section3-items h1{
+    font-size: 20px;
+    font-weight: 600
+}
+.section3-items p{
+    margin-top: 5px;
+    color: rgba(69, 69, 69, 0.771);
+}

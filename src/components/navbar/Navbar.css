@@ -6,12 +6,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /*position: sticky;
+    position: sticky;
     top: 0;
     background-color: white;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    z-index: 1000;*/
+    z-index: 10000;
+    margin-bottom: 40px;
 }
 .navmenu{
   display: flex;
