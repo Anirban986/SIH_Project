@@ -13,31 +13,31 @@ function Navbar() {
         <li className='list-items'>
             <div className='navmenu-list'>
             <img className='navmenu-img'src={home} alt="" />
-            <div className='navmenu-text'>Home</div>
+            <h1 >Home</h1>
             </div>
         </li>
         <li className='list-items' >
             <div className='navmenu-list'>
              <img className='navmenu-img' src={learn} alt="" />
-             <div className='navmenu-text'>Learn</div>
+             <h1>Learn</h1>
             </div>
         </li>
         <li  className='list-items'>
             <div className='navmenu-list'>
                 <img className='navmenu-img' src={vertual} alt="" />
-                <div className='navmenu-text'>Vertual drills</div>
+                <h1 >Vertual drills</h1>
             </div>
         </li>
         <li className='list-items'>
             <div  className='navmenu-list'>
                 <img className='navmenu-img' src={alerts} alt="" />
-                <div className='navmenu-text'>Alerts</div>
+                <h1>Alerts</h1>
             </div>
         </li>
         <li className='list-items' >
             <div className='navmenu-list'>
                 <img className='navmenu-img' src={emergency} alt="" />
-                <div className='navmenu-text'>Emergency</div>
+                <h1>Emergency</h1>
             </div>
         </li>
      </ul>
