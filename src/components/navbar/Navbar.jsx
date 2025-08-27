@@ -5,6 +5,7 @@ import alerts from '../../assets/alerts.svg'
 import emergency from '../../assets/emergency.svg'
 import learn from '../../assets/learn.svg'
 import vertual from '../../assets/vertual.svg'
+import game from '../../assets/game.svg'
 import { Link } from 'react-router'
 function Navbar() {
     return (
@@ -48,6 +49,17 @@ function Navbar() {
                         </div>
                     </li>
                 </Link>
+
+
+                <Link className='nav-link' to='/Safty' >
+                    <li className='list-items'>
+                        <div className='navmenu-list'>
+                            <img className='navmenu-img' src={game} alt="" />
+                            <h1>Safty games</h1>
+                        </div>
+                    </li>
+                </Link>
+
 
 
                 <Link className='nav-link' to='/Emergency'>  <li className='list-items' >

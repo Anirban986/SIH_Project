@@ -7,6 +7,8 @@ import Learn from './components/Learn/Learn'
 import Vertual from './components/Vertual/Vertual'
 import Alerts from './components/Alerts/Alerts'
 import Emergency from './components/Emergency/Emergency'
+import Footer from './components/Footer/Footer'
+import Safty from './components/Safty-games/Safty'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -19,9 +21,10 @@ function App() {
       <Route path='/Learn' element={<Learn/>}/>
       <Route path='/Vertual' element={<Vertual/>}/>
       <Route path='/Alerts' element={<Alerts/>}/>
+      <Route path='/Safty' element={<Safty/>}/>
       <Route path='/Emergency' element={<Emergency/>}/>
      </Routes>
-      
+      <Footer/>
     </>
   )
 }
