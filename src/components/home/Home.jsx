@@ -41,7 +41,7 @@ function Home() {
 
             <div className="section2">
                 <Link className='sec-link' to='/Learn' ><div className="button">Starting learning</div></Link>
-                <Link className='sec-link' to='/Vertual' ><div className="button-white">Try Vertual Drills</div></Link>
+                <Link className='sec-link' to='/Vertual' ><div className="button-white">Try Virtual Drills</div></Link>
             </div>
 
             <div className="section3">

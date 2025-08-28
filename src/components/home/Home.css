@@ -94,6 +94,7 @@
     border: 1px solid rgba(128, 188, 244, 0.752);
     padding: 40px 70px ;
     border-radius: 20px;
+    cursor: pointer;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .section3-items:hover{

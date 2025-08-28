@@ -35,7 +35,7 @@ function Navbar() {
                     <li className='list-items'>
                         <div className='navmenu-list'>
                             <img className='navmenu-img' src={vertual} alt="" />
-                            <h1 >Vertual drills</h1>
+                            <h1 >Virtual drills</h1>
                         </div>
                     </li>
                 </Link>
