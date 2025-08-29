@@ -7,7 +7,7 @@ import learn from '../../assets/learn.svg'
 import vertual from '../../assets/vertual.svg'
 import game from '../../assets/game.svg'
 import { Link } from 'react-router'
-function Navbar() {
+function Navbar({ onSignupClick }) {
     return (
         <div className='navbar'>
             <img src="" alt="" />
@@ -73,7 +73,10 @@ function Navbar() {
 
 
             </ul>
-            <div className='signup'>Sign up</div>
+            
+            <div className='signup' onClick={onSignupClick}>Sign up</div>
+            
+            
         </div>
     )
 }

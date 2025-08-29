@@ -1,1 +1,56 @@
-
+*{
+    padding: 0;
+    margin: 0;
+}
+.learning-top{
+    text-align: center;
+     margin-bottom: 50px;
+}
+.learning-top h1{
+    font-size: 70px;
+    margin-bottom: 20px;
+    background: linear-gradient(320deg, blue, rgb(255, 4, 4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.learning-top p{
+   font-size: 18px;
+    color: rgba(86, 86, 86, 0.922); 
+}
+.learning-top-blocks{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content:space-evenly;
+    margin-bottom: 50px;
+}
+.learning-top-block-img{
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    background-color: rgba(223, 188, 255, 0.616);
+    border-radius: 8px;
+}
+.learning-top-block{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    gap: 10px;
+    border: 1px solid  rgb(147 144 144 / 38%);
+    border-radius: 10px;
+    padding: 10px;
+}
+.learning-top-block-img img{
+    width: 20px;
+}
+.learning-top-block-texts{
+    max-width: 800px;
+}
+.learning-top-block-texts p{
+    font-size: 14px;
+     color: rgba(86, 86, 86, 0.922);
+}
+.learning-top-block-texts h1{
+ font-size: 20px;
+}

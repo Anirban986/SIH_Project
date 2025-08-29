@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.safty-top{
+    text-align: center;
+     margin-bottom: 50px;
+}
+.safty-top h1{
+    font-size: 70px;
+    margin-bottom: 20px;
+    background: linear-gradient(320deg, blue, rgb(255, 4, 4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.safty-top p{
+   font-size: 18px;
+    color: rgba(86, 86, 86, 0.922); 
+}
+.safty-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-items: center;
+  margin-bottom: 50px;
+}
+.safty-block{
+    max-width: 450px;
+    border-radius: 20px;
+    border: 1px solid rgb(147 144 144 / 38%);
+    padding: 10px;
+    transition: 0.3s;
+}
+.safty-block:hover{
+    transform: scale(1.04);
+    border: 1px solid rgb(0, 145, 255);
+}
+.safty-block-top{
+    display: flex;
+    align-items: center;
+}
+.safty-block-top-img{
+    padding: 10px;
+    /*background-color: aqua;*/
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+.safty-block-top-img img{
+    width: 35px;
+}
+.safty-block-texts{
+    width: 370px;
+}
+.safty-block-text{
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.safty-block-text h1{
+    font-size: 22px;
+    font-weight: 400;
+}
+.tag{
+    font-size: 12px;
+    border-radius: 10px;
+    padding:2px 5px;
+    margin-bottom: 5px;
+}
+.p{
+  max-width: 400px;
+  margin-bottom: 10px;  
+  padding: 5px;
+}
+.p p{
+   color: rgba(86, 86, 86, 0.922); 
+}
+.safty-block-mid{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 400px;
+    /*padding: 20px;*/
+    
+}
+.safty-block-mid-members{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 10px;
+}
+.safty-block-mid-members img{
+    width: 18px;
+}
+.safty-block-mid-members h1{
+    font-size: 18px;
+    font-weight: 300;
+}
+.safty-block-mid-members p{
+   color: rgba(86, 86, 86, 0.922);  
+   font-size: 12px;
+}
+.safty-block-bottom{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.safty-play{
+   background-color: rgb(24, 58, 181);
+    width: 350px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 20px;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+.safty-play:hover{
+  background-color: rgba(24, 58, 181, 0.687) ;
+  cursor: pointer;
+}
+.safty-play img{
+    width: 20px;
+    filter: brightness(0) invert(1);
+}
+.safty-play p{
+    color: white;
+    font-size: 15px;
+}
