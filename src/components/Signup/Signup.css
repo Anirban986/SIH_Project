@@ -49,6 +49,11 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
+    transition: 0.3s;
+}
+.signup-form input:hover{
+    border: 2px solid rgb(0, 251, 255);
+    transform: scale(1.02);
 }
 
 .signup-form input:focus {

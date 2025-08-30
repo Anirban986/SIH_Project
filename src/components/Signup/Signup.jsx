@@ -14,7 +14,7 @@ function Signup({ onClose }) {
       <div className="modal">
         <h2>Create Account</h2>
         <form className="signup-form">
-          <input type="text" placeholder="Enter your username" />
+          <input  type="text" placeholder="Enter your username" />
           <input type="email" placeholder="Enter your email" />
           <input type="password" placeholder="Enter your password" />
           <button type="submit" className="submit-btn">Sign up</button>

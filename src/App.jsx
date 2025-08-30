@@ -10,6 +10,7 @@ import Emergency from './components/Emergency/Emergency'
 import Footer from './components/Footer/Footer'
 import Safty from './components/Safty-games/Safty'
 import Signup from './components/Signup/Signup'
+import Dashboard from './components/DashBoard/Dashboard/Dashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
       <Route path='/Alerts' element={<Alerts/>}/>
       <Route path='/Safty' element={<Safty/>}/>
       <Route path='/Emergency' element={<Emergency/>}/>
+      <Route path='/Dashboard' element={<Dashboard/>}/>
      </Routes>
        {/* Only show footer if modal is closed */}
       {!showSignup && <Footer />}

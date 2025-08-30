@@ -1,0 +1,72 @@
+.institution-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header row */
+.institution-table th {
+  background: #f4f6f8; /* light neutral */
+  color: #333;
+  font-weight: 600;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Table rows */
+.institution-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee; /* only horizontal lines */
+  text-align: center;
+}
+
+/* Alternate row background for better readability */
+.institution-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Hover effect */
+.institution-table tr:hover {
+  background-color: #f1f9ff;
+  transition: background 0.2s ease;
+}
+
+/* Preparedness levels */
+.institution-table .high {
+  color: #2e7d32; /* green */
+  font-weight: 600;
+}
+.institution-table .medium {
+  color: #f57c00; /* orange */
+  font-weight: 600;
+}
+.institution-table .low {
+  color: #d32f2f; /* red */
+  font-weight: 600;
+}
+
+/* Accent styles for State & Type */
+.institution-table td.state {
+  color: #1565c0; /* blue accent */
+  font-weight: 500;
+}
+.institution-table td.type {
+  color: #6a1b9a; /* purple accent */
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .institution-table {
+    font-size: 13px;
+  }
+  .institution-table th,
+  .institution-table td {
+    padding: 8px;
+  }
+}
