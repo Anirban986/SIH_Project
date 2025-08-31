@@ -9,7 +9,7 @@ import {
 } from "recharts";
 import "./DrillPerformancePie.css";
 
-// ✅ Mock Data (number of drills)
+
 const data = [
   { name: "Excellent", value: 45 },
   { name: "Good", value: 30 },
@@ -18,7 +18,7 @@ const data = [
   { name: "Needs Improvement", value: 3 },
 ];
 
-// ✅ Colors for each category
+
 const COLORS = ["#28a745", "#17a2b8", "#ffc107", "#fd7e14", "#dc3545"];
 
 function DrillPerformancePie() {

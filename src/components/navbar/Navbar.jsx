@@ -7,11 +7,13 @@ import learn from '../../assets/learn.svg'
 import vertual from '../../assets/vertual.svg'
 import game from '../../assets/game.svg'
 import dashboard from '../../assets/dashboard.svg'
+import logo from '../../assets/logo.svg'
 import { Link } from 'react-router'
+
 function Navbar({ onSignupClick }) {
     return (
         <div className='navbar'>
-            <img src="" alt="" />
+            <div className="logo"><img src={logo} alt="" /></div>
             <ul className='navmenu'>
                 <Link className='nav-link' to='/'>
                     <li className='list-items'>
@@ -70,22 +72,22 @@ function Navbar({ onSignupClick }) {
                     </div>
                 </li>
                 </Link>
-                
-                 <Link className='nav-link' to='/Dashboard'>  <li className='list-items' >
+
+                <Link className='nav-link' to='/Dashboard'>  <li className='list-items' >
                     <div className='navmenu-list'>
                         <img className='navmenu-img' src={dashboard} alt="" />
                         <h1>Dashboard</h1>
                     </div>
                 </li>
                 </Link>
-                
+
 
 
             </ul>
-            
+
             <div className='signup' onClick={onSignupClick}>Sign up</div>
-            
-            
+
+
         </div>
     )
 }

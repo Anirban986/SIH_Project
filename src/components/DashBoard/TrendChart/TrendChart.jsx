@@ -11,7 +11,7 @@ import {
 } from "recharts";
 import "./TrendChart.css";
 
-// ✅ Mock Data
+
 const data = [
   { month: "Jan", earthquake: 75, fire: 60, flood: 50 },
   { month: "Feb", earthquake: 82, fire: 65, flood: 55 },

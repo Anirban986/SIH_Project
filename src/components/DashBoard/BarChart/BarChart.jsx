@@ -11,7 +11,7 @@ import {
 } from "recharts";
 import "./BarChart.css";
 
-// Updated mock data
+
 const data = [
   { drill: "Earthquake", conducted: 20, completed: 17 },
   { drill: "Fire Safety", conducted: 18, completed: 14 },
@@ -20,7 +20,7 @@ const data = [
   { drill: "Flood Preparedness", conducted: 22, completed: 18 },
 ];
 
-// Custom tooltip to show drill details
+
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     const { conducted, completed } = payload[0].payload;
@@ -38,7 +38,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const DisasterCompletionChart = () => {
-  // Add percentage field for bars
+  
   const chartData = data.map(d => ({
     ...d,
     completion: ((d.completed / d.conducted) * 100).toFixed(1),

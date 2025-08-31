@@ -9,6 +9,7 @@ import achievement from '../../assets/achievement.svg'
 import safty from '../../assets/safty.svg'
 
 import { Link } from 'react-router'
+import IndiaDisasterMap from '../intaractiveMap/IndiaDisasterMap'
 function Home() {
     return (
         <div className='home'>
@@ -60,6 +61,10 @@ function Home() {
                     <h1>Safety Games</h1>
                     <p>Learn through engaging gameplay</p>
                 </div>
+            </div>
+
+            <div className="map">
+                <IndiaDisasterMap/>
             </div>
         </div>
     )
