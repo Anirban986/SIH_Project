@@ -10,6 +10,7 @@ import safty from '../../assets/safty.svg'
 
 import { Link } from 'react-router'
 import IndiaDisasterMap from '../intaractiveMap/IndiaDisasterMap'
+import Weather from '../weather/Weather'
 function Home() {
     return (
         <div className='home'>
@@ -65,6 +66,7 @@ function Home() {
 
             <div className="map">
                 <IndiaDisasterMap/>
+                <Weather/>
             </div>
         </div>
     )

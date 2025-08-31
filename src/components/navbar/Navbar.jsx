@@ -13,7 +13,7 @@ import { Link } from 'react-router'
 function Navbar({ onSignupClick }) {
     return (
         <div className='navbar'>
-            <div className="logo"><img src={logo} alt="" /></div>
+            <div className="logo"><img src="" alt="" /></div>
             <ul className='navmenu'>
                 <Link className='nav-link' to='/'>
                     <li className='list-items'>

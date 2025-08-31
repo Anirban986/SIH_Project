@@ -28,7 +28,7 @@ const API_LINKS = [
   // Use whichever endpoints you have; included examples (use the URLs you provided)
   "https://api.data.gov.in/resource/ee545453-ed04-43f7-9a2a-816799a67445?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json",
   "https://api.data.gov.in/resource/3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json",
-  "https://api.data.gov.in/resource/89e449ee-6820-4503-8f42-960711cdfcaa?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json"
+  "https://api.data.gov.in/resource/89e449ee-6820-4503-8f42-960711cdfcaa?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json",
   // Add or remove URLs as needed (the 11bb... one you tested earlier might be unreliable)
 ];
 
@@ -100,7 +100,7 @@ function extractLatLon(record) {
 
 /* ----------------- Component ----------------- */
 
-export default function IndiaDisasterMap({ width = "50%", height = "520px" }) {
+export default function IndiaDisasterMap({ width = "50%", height = "540px" }) {
   const [records, setRecords] = useState([]); // raw records from all APIs
   const [geoJsons, setGeoJsons] = useState([]); // any FeatureCollections directly returned
   const [loading, setLoading] = useState(true);
