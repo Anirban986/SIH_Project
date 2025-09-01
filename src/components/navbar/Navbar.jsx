@@ -7,79 +7,104 @@ import learn from '../../assets/learn.svg'
 import vertual from '../../assets/vertual.svg'
 import game from '../../assets/game.svg'
 import dashboard from '../../assets/dashboard.svg'
-import logo from '../../assets/logo.svg'
 import { Link } from 'react-router'
+import { NavLink } from 'react-router'
+
 
 function Navbar({ onSignupClick }) {
     return (
         <div className='navbar'>
             <div className="logo"><img src="" alt="" /></div>
             <ul className='navmenu'>
-                <Link className='nav-link' to='/'>
+                <NavLink
+                    to='/'
+                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
                     <li className='list-items'>
                         <div className='navmenu-list'>
                             <img className='navmenu-img' src={home} alt="" />
-                            <h1 >Home</h1>
+                            <h1>Home</h1>
                         </div>
                     </li>
-                </Link>
+                </NavLink>
 
-                <Link className='nav-link' to='/Learn'>
+
+                <NavLink
+                    to='/learn'
+                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
                     <li className='list-items' >
                         <div className='navmenu-list'>
                             <img className='navmenu-img' src={learn} alt="" />
                             <h1>Learn</h1>
                         </div>
                     </li>
-                </Link>
+                </NavLink>
 
 
-                <Link className='nav-link' to='/Vertual'>
-                    <li className='list-items'>
+                <NavLink
+                    to='/vertual'
+                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
+                    <li className='list-items' >
                         <div className='navmenu-list'>
                             <img className='navmenu-img' src={vertual} alt="" />
-                            <h1 >Virtual drills</h1>
+                            <h1>Virtual Learning</h1>
                         </div>
                     </li>
-                </Link>
+                </NavLink>
 
 
-                <Link className='nav-link' to='/Alerts' >
-                    <li className='list-items'>
+                <NavLink
+                    to='/Alerts'
+                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
+                    <li className='list-items' >
                         <div className='navmenu-list'>
                             <img className='navmenu-img' src={alerts} alt="" />
                             <h1>Alerts</h1>
                         </div>
                     </li>
-                </Link>
+                </NavLink>
 
 
-                <Link className='nav-link' to='/Safty' >
-                    <li className='list-items'>
+                <NavLink
+                    to='/safty'
+                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
+                    <li className='list-items' >
                         <div className='navmenu-list'>
                             <img className='navmenu-img' src={game} alt="" />
                             <h1>Safty games</h1>
                         </div>
                     </li>
-                </Link>
+                </NavLink>
 
 
 
-                <Link className='nav-link' to='/Emergency'>  <li className='list-items' >
-                    <div className='navmenu-list'>
-                        <img className='navmenu-img' src={emergency} alt="" />
-                        <h1>Emergency</h1>
-                    </div>
-                </li>
-                </Link>
+                <NavLink
+                    to='/Emergency'
+                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
+                    <li className='list-items' >
+                        <div className='navmenu-list'>
+                            <img className='navmenu-img' src={emergency} alt="" />
+                            <h1>Emergency Contacts</h1>
+                        </div>
+                    </li>
+                </NavLink>
 
-                <Link className='nav-link' to='/Dashboard'>  <li className='list-items' >
-                    <div className='navmenu-list'>
-                        <img className='navmenu-img' src={dashboard} alt="" />
-                        <h1>Dashboard</h1>
-                    </div>
-                </li>
-                </Link>
+                <NavLink
+                    to='/Dashboard'
+                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
+                    <li className='list-items' >
+                        <div className='navmenu-list'>
+                            <img className='navmenu-img' src={dashboard} alt="" />
+                            <h1>Dashboard</h1>
+                        </div>
+                    </li>
+                </NavLink>
 
 
 
