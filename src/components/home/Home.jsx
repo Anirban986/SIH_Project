@@ -47,21 +47,25 @@ function Home() {
             </div>
 
             <div className="section3">
+                
                 <div className="section3-items">
                     <img src={map} alt="" />
                     <h1>Interactive Learning</h1>
                     <p>Region-specific disaster education modules</p>
                 </div>
+                
+                
                 <div className="section3-items">
                     <img src={activity} alt="" />
                     <h1>Virtual Drills</h1>
                     <p>Practice emergency procedures safely</p>
                 </div>
-                <div className="section3-items">
+                <Link className='sec-link' to='/safty' ><div className="section3-items">
                     <img src={safty} alt="" />
                     <h1>Safety Games</h1>
                     <p>Learn through engaging gameplay</p>
-                </div>
+                </div></Link>
+                
             </div>
 
             <div className="map">
