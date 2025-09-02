@@ -8,7 +8,7 @@
   place-self: center;
   padding: 20px;
   border-radius: 10px;
-  background-image: linear-gradient(245deg, rgb(254, 5, 5), rgb(22, 37, 255));
+  background-image: linear-gradient(245deg, rgb(5, 254, 254), rgb(22, 37, 255));
   display: flex;
   flex-direction: column;
   align-items: center;

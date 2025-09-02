@@ -1,0 +1,174 @@
+/* NAVBAR */
+.nav {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 12px 20px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.nav ul li.active {
+    background: linear-gradient(320deg, blue, rgb(4, 255, 238));
+    color: #fff;
+}
+
+.nav ul li small {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Container for all cards */
+.cards-learn {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Single Card */
+.learning-card {
+    width: 400px;
+    /* fixed width */
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgb(0, 119, 255);
+}
+
+/* Title & Description */
+.learning-card h3 {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.learning-card p {
+    font-size: 13px;
+    color: rgba(86, 86, 86, 0.922);
+    margin-bottom: 12px;
+}
+
+/* Progress Bar */
+.progress {
+    background: #f1f1f1;
+    border-radius: 8px;
+    height: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    /* starts at 0 */
+    background: linear-gradient(90deg, #4c00ff, #7a5cff);
+    transition: width 0.4s ease;
+    /* smooth update */
+    border-radius: 8px;
+}
+
+/* Progress text */
+.learning-card small {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Meta info */
+.meta {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+.meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.level {
+    display: inline-block;
+    width: auto;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+.level.beginner {
+    background: #e6f7ff;
+    color: #0077b6;
+}
+
+.level.intermediate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.level.advanced {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.action {
+    background-color: rgb(24, 58, 181);
+    width: auto;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 20px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+.action img {
+    width: 15px;
+    filter: brightness(0) invert(1);
+}
+
+.action-para {
+    color: white;
+}
+
+.action:hover {
+    background-color: rgba(24, 58, 181, 0.752);
+    cursor: pointer;
+}

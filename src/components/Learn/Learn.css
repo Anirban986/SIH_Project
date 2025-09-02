@@ -9,7 +9,7 @@
 .learning-top h1{
     font-size: 70px;
     margin-bottom: 20px;
-    background: linear-gradient(320deg, blue, rgb(255, 4, 4));
+    background: linear-gradient(276deg, blue, rgb(255, 4, 4));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 

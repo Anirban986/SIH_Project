@@ -3,6 +3,7 @@ import './learn.css'
 import achievement from '../../assets/achievement.svg'
 import trophy from '../../assets/trophy.svg'
 import clock from '../../assets/clock.svg'
+import LearningNav from '../learning-folder/learning-nav/LearningNav'
 function Learn() {
   return (
     <div className='learn'>
@@ -42,7 +43,8 @@ function Learn() {
           </div>
         </div>
       </div>
-
+      
+      <LearningNav/>
 
       
     </div>
