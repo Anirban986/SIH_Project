@@ -14,7 +14,7 @@ function Vertual() {
   return (
     <div className='vertual'>
       <div className="vertual-top">
-        <h1>Virtual Emergency Drills</h1>
+        <h1>Emergency Drills</h1>
         <p>Practice emergency procedures through interactive simulations</p>
       </div>
 

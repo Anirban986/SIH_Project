@@ -43,7 +43,7 @@ function Home() {
 
             <div className="section2">
                 <Link className='sec-link' to='/Learn' ><div className="button">Starting learning</div></Link>
-                <Link className='sec-link' to='/Vertual' ><div className="button-white">Try Virtual Drills</div></Link>
+                <Link className='sec-link' to='/Vertual' ><div className="button-white">Try Emergency Drills</div></Link>
             </div>
 
             <div className="section3">
@@ -57,7 +57,7 @@ function Home() {
                 
                 <div className="section3-items">
                     <img src={activity} alt="" />
-                    <h1>Virtual Drills</h1>
+                    <h1>Emergency Drills</h1>
                     <p>Practice emergency procedures safely</p>
                 </div>
                 <Link className='sec-link' to='/safty' ><div className="section3-items">

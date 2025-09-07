@@ -55,8 +55,8 @@ function Weather() {
                 location: data.address,
                 icon: icon,
                 address: data.timezone,
-                apparentTemp:data.currentConditions.feelslike ,
-                pressure:data.currentConditions.pressure
+                apparentTemp: data.currentConditions.feelslike,
+                pressure: data.currentConditions.pressure
 
             })
 
@@ -122,14 +122,14 @@ function Weather() {
                                 <span>Wind speed</span>
                             </div>
                         </div>
-                         <div className="col">
+                        <div className="col">
                             <img src={temp} alt="" />
                             <div className='text'>
                                 <p>{weatherdata.apparentTemp}°C</p>
                                 <span>Apparent Temparature</span>
                             </div>
                         </div>
-                         <div className="col">
+                        <div className="col">
                             <img src={pressure} alt="" />
                             <div className='text' >
                                 <p>{weatherdata.pressure}hPa</p>
