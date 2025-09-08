@@ -99,7 +99,7 @@ function Weather() {
         <div className='weather'>
             <div className="search">
                 <input ref={inputRef} type="text" placeholder='Search' />
-                <img src={search} alt="search" onClick={() => fetchWeather(inputRef.current.value)} />
+                <div className='search-img'><img src={search} alt="search" onClick={() => fetchWeather(inputRef.current.value)} /></div>
             </div>
 
             {weatherdata && (
@@ -126,7 +126,7 @@ function Weather() {
                             <img src={temp} alt="" />
                             <div className='text'>
                                 <p>{weatherdata.apparentTemp}°C</p>
-                                <span>Apparent Temparature</span>
+                                <span>Feels like</span>
                             </div>
                         </div>
                         <div className="col">

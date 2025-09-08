@@ -28,15 +28,14 @@
 .learning-top-block-img{
     width: 22px;
     height: 22px;
-    padding: 5px;
-    background-color: rgba(223, 188, 255, 0.616);
+    padding: 1px;
     border-radius: 8px;
 }
 .learning-top-block{
     display: flex;
     align-items: center;
     width: 300px;
-    gap: 10px;
+    gap: 15px;
     border: 1px solid  rgb(147 144 144 / 38%);
     border-radius: 10px;
     padding: 10px;

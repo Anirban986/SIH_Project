@@ -42,7 +42,7 @@ function Home() {
             </div>
 
             <div className="section2">
-                <Link className='sec-link' to='/Learn' ><div className="button">Starting learning</div></Link>
+                <Link className='sec-link' to='/Learn' ><div className="button">Start learning</div></Link>
                 <Link className='sec-link' to='/Vertual' ><div className="button-white">Try Emergency Drills</div></Link>
             </div>
 
@@ -60,7 +60,8 @@ function Home() {
                     <h1>Emergency Drills</h1>
                     <p>Practice emergency procedures safely</p>
                 </div>
-                <Link className='sec-link' to='/safty' ><div className="section3-items">
+                <Link className='sec-link' to='/safty' >
+                <div className="section3-items">
                     <img src={safty} alt="" />
                     <h1>Safety Games</h1>
                     <p>Learn through engaging gameplay</p>
