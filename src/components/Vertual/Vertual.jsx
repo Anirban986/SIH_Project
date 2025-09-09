@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Vertual.css'
+import earthquakeGame from './earthquakeGame.json'
 
 import vertual from '../../assets/vertual.svg'
 import earth from '../../assets/earth.svg'
@@ -28,7 +29,7 @@ function Vertual() {
         "Execute proper drop, cover, and hold technique",
         "Identify safe spots in classrooms and corridors",
       ],
-      lastConducted: "8/22/2025",
+      
     },
     {
       id: 2,
@@ -43,7 +44,7 @@ function Vertual() {
         "Identify nearest emergency exits",
         "Follow evacuation routes safely",
       ],
-      lastConducted: "8/22/2025",
+      
     },
     {
       id: 3,
@@ -58,7 +59,7 @@ function Vertual() {
         "Recognize flood warning signs",
         "Navigate to higher floors safely",
       ],
-      lastConducted: "8/22/2025",
+      
     },
     {
       id: 4,
@@ -73,14 +74,39 @@ function Vertual() {
         "Secure classroom entrances",
         "Maintain silence and calm",
       ],
-      lastConducted: "8/22/2025",
+      
     },
   ];
+
+  // ✅ Game State
+  const [showGame, setShowGame] = useState(false);
+  const [player, setPlayer] = useState(earthquakeGame.player);
+  const [currentScene, setCurrentScene] = useState("1");
+
+  const scene = earthquakeGame.scenes[currentScene];
+
+  const handleChoice = (choice) => {
+    setPlayer((prev) => ({
+      health: Math.max(0, prev.health + choice.effects.health),
+      trust: prev.trust + choice.effects.trust,
+      supplies: Math.max(0, prev.supplies + choice.effects.supplies),
+    }));
+
+    if (choice.nextScene) {
+      setCurrentScene(choice.nextScene);
+    }
+  };
+
+  const resetGame = () => {
+    setPlayer(earthquakeGame.player);
+    setCurrentScene("1");
+    setShowGame(true);
+  };
 
   return (
     <div className='vertual'>
       <div className="vertual-top">
-        <h1>Emergency Drills</h1>
+        <h1>Vertual Drills</h1>
         <p>Practice emergency procedures through interactive simulations</p>
       </div>
 
@@ -154,7 +180,10 @@ function Vertual() {
             </div>
 
             <div className="vertual-block-bottom">
-              <div className="vertual-play">
+              <div
+                className="vertual-play"
+                onClick={() => drill.id === 1 ? resetGame() : alert("This drill is not interactive yet.")}
+              >
                 <img src={play} alt="play" />
                 <p>Start Drill</p>
               </div>
@@ -162,6 +191,41 @@ function Vertual() {
           </div>
         ))}
       </div>
+
+      {/* ✅ Game Panel (Modal Style) */}
+      {showGame && (
+        <div className="game-panel">
+          <div className="game-content">
+            {/* Player Stats */}
+            <div className="stats">
+              <p>❤️ Health: {player.health}</p>
+              <p>🤝 Trust: {player.trust}</p>
+              <p>🎒 Supplies: {player.supplies}</p>
+            </div>
+
+            {/* Current Scene */}
+            <h2>Scene {currentScene}</h2>
+            <p>{scene.description}</p>
+
+            {/* Choices */}
+            {scene.choices ? (
+              <div className="options">
+                {scene.choices.map((choice, idx) => (
+                  <button key={idx} onClick={() => handleChoice(choice)}>
+                    {choice.text}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="ending">
+                <h3> Ending</h3>
+                <p>{scene.description}</p>
+                <div className='ending-btn' onClick={() => setShowGame(false)}>Close</div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
