@@ -49,7 +49,7 @@ function Navbar({ onSignupClick }) {
                     <li className='list-items' >
                         <div className='navmenu-list'>
                             <img className='navmenu-img' src={vertual} alt="" />
-                            <h1>Emergency Drills</h1>
+                            <h1>Virtual Drills</h1>
                         </div>
                     </li>
                 </NavLink>

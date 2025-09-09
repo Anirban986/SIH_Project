@@ -7,7 +7,7 @@ import map from '../../assets/map.svg'
 import activity from '../../assets/activity.svg'
 import achievement from '../../assets/achievement.svg'
 import safty from '../../assets/safty.svg'
-
+import peaple from '../../assets/peaple.svg'
 import { Link } from 'react-router'
 import IndiaDisasterMap from '../intaractiveMap/IndiaDisasterMap'
 import Weather from '../weather/Weather'
@@ -47,19 +47,30 @@ function Home() {
             </div>
 
             <div className="section3">
-                
-                <div className="section3-items">
+                 <Link className='sec-link' to='/learn' >
+                 <div className="section3-items">
                     <img src={map} alt="" />
                     <h1>Interactive Learning</h1>
                     <p>Region-specific disaster education modules</p>
                 </div>
+                 </Link>
                 
                 
+                <Link className='sec-link' to='/vertual' >
                 <div className="section3-items">
                     <img src={activity} alt="" />
-                    <h1>Emergency Drills</h1>
+                    <h1>Vertual Drills</h1>
                     <p>Practice emergency procedures safely</p>
                 </div>
+                </Link>
+                
+
+                 <div className="section3-items">
+                    <img src={peaple} alt="" />
+                    <h1>Community</h1>
+                    <p>Communicate with peers</p>
+                </div>
+
                 <Link className='sec-link' to='/safty' >
                 <div className="section3-items">
                     <img src={safty} alt="" />

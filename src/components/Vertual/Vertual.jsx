@@ -14,7 +14,7 @@ import play from '../../assets/play.svg'
 import lock from '../../assets/lock.svg'
 
 function Vertual() {
-  // ✅ Drill Data Array
+  // ✅ Drill Data
   const drills = [
     {
       id: 1,
@@ -22,14 +22,11 @@ function Vertual() {
       tag: "basic",
       description: "Practice drop, cover, and hold procedures during seismic activity.",
       img: earth,
-      points: 100,
-      players: 100,
       rating: 4.6,
       objectives: [
         "Execute proper drop, cover, and hold technique",
         "Identify safe spots in classrooms and corridors",
       ],
-      
     },
     {
       id: 2,
@@ -37,14 +34,11 @@ function Vertual() {
       tag: "basic",
       description: "Navigate emergency exits and assembly points during fire emergency.",
       img: fire,
-      points: 100,
-      players: 100,
       rating: 4.6,
       objectives: [
         "Identify nearest emergency exits",
         "Follow evacuation routes safely",
       ],
-      
     },
     {
       id: 3,
@@ -52,14 +46,11 @@ function Vertual() {
       tag: "basic",
       description: "Respond to sudden flooding and move to higher ground safely.",
       img: water,
-      points: 100,
-      players: 100,
       rating: 4.6,
       objectives: [
         "Recognize flood warning signs",
         "Navigate to higher floors safely",
       ],
-      
     },
     {
       id: 4,
@@ -67,14 +58,11 @@ function Vertual() {
       tag: "basic",
       description: "Secure classroom and follow lockdown protocols for security threats.",
       img: lock,
-      points: 100,
-      players: 100,
       rating: 4.6,
       objectives: [
         "Secure classroom entrances",
         "Maintain silence and calm",
       ],
-      
     },
   ];
 
@@ -85,11 +73,12 @@ function Vertual() {
 
   const scene = earthquakeGame.scenes[currentScene];
 
+  // Handle choices
   const handleChoice = (choice) => {
     setPlayer((prev) => ({
-      health: Math.max(0, prev.health + choice.effects.health),
-      trust: prev.trust + choice.effects.trust,
-      supplies: Math.max(0, prev.supplies + choice.effects.supplies),
+      health: Math.max(0, prev.health + (choice.effects.health || 0)),
+      trust: prev.trust + (choice.effects.trust || 0),
+      supplies: Math.max(0, prev.supplies + (choice.effects.supplies || 0)),
     }));
 
     if (choice.nextScene) {
@@ -97,6 +86,7 @@ function Vertual() {
     }
   };
 
+  // Reset game
   const resetGame = () => {
     setPlayer(earthquakeGame.player);
     setCurrentScene("1");
@@ -106,7 +96,7 @@ function Vertual() {
   return (
     <div className='vertual'>
       <div className="vertual-top">
-        <h1>Vertual Drills</h1>
+        <h1>Emergency Drills</h1>
         <p>Practice emergency procedures through interactive simulations</p>
       </div>
 
@@ -119,8 +109,8 @@ function Vertual() {
         </div>
         <div className="vertual-block-mid-member">
           <img src={score} alt="" />
-          <h1>79%</h1>
-          <p>Average Score</p>
+          <h1>{Math.round((player.health + player.trust + player.supplies) / 3)}%</h1>
+          <p>Current Score</p>
         </div>
         <div className="vertual-block-mid-member">
           <img src={clock} alt="" />
@@ -154,18 +144,18 @@ function Vertual() {
             <div className="vertual-block-mid">
               <div className="vertual-block-mid-members">
                 <img src={clock} alt="points" />
-                <h1>{drill.points}</h1>
-                <p>Points</p>
+                <h1>{player.health}</h1>
+                <p>Health</p>
               </div>
               <div className="vertual-block-mid-members">
                 <img src={peaple} alt="players" />
-                <h1>{drill.players}</h1>
-                <p>Players</p>
+                <h1>{player.trust}</h1>
+                <p>Trust</p>
               </div>
               <div className="vertual-block-mid-members">
-                <img src={score} alt="rating" />
-                <h1>{drill.rating}</h1>
-                <p>Rating</p>
+                <img src={score} alt="supplies" />
+                <h1>{player.supplies}</h1>
+                <p>Supplies</p>
               </div>
             </div>
 
@@ -176,7 +166,6 @@ function Vertual() {
                   <p key={index}>{index + 1}. {obj}</p>
                 ))}
               </div>
-              <p>Last conducted: {drill.lastConducted}</p>
             </div>
 
             <div className="vertual-block-bottom">
@@ -192,7 +181,7 @@ function Vertual() {
         ))}
       </div>
 
-      {/* ✅ Game Panel (Modal Style) */}
+      {/* ✅ Game Panel */}
       {showGame && (
         <div className="game-panel">
           <div className="game-content">
@@ -204,21 +193,20 @@ function Vertual() {
             </div>
 
             {/* Current Scene */}
-            <h2>Scene {currentScene}</h2>
-            <p>{scene.description}</p>
-
-            {/* Choices */}
             {scene.choices ? (
-              <div className="options">
-                {scene.choices.map((choice, idx) => (
-                  <button key={idx} onClick={() => handleChoice(choice)}>
-                    {choice.text}
-                  </button>
-                ))}
-              </div>
+              <>
+                <p className='description'>{scene.description}</p>
+                <div className="options">
+                  {scene.choices.map((choice, idx) => (
+                    <button key={idx} onClick={() => handleChoice(choice)}>
+                      {choice.text}
+                    </button>
+                  ))}
+                </div>
+              </>
             ) : (
               <div className="ending">
-                <h3> Ending</h3>
+                <h3>Ending</h3>
                 <p>{scene.description}</p>
                 <div className='ending-btn' onClick={() => setShowGame(false)}>Close</div>
               </div>

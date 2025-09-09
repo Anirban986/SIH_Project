@@ -284,6 +284,14 @@
   text-align: center;
   
 }
+.ending h3{
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.ending p{
+  font-size: 30px;
+  font-weight: 600;
+}
 .ending-btn {
     margin-top: 20px;
   background: linear-gradient(123deg, red, blue)!important;
