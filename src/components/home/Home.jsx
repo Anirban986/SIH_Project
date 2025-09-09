@@ -64,12 +64,14 @@ function Home() {
                 </div>
                 </Link>
                 
-
-                 <div className="section3-items">
+             <Link className='sec-link' to='/Community' >
+              <div className="section3-items">
                     <img src={peaple} alt="" />
                     <h1>Community</h1>
                     <p>Communicate with peers</p>
                 </div>
+             </Link>
+                
 
                 <Link className='sec-link' to='/safty' >
                 <div className="section3-items">

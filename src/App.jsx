@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer'
 import Safty from './components/Safty-games/Safty'
 import Signup from './components/Signup/Signup'
 import Dashboard from './components/DashBoard/Dashboard/Dashboard'
+import Community from './components/communtiy/Community'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +27,7 @@ function App() {
       <Route path='/Safty' element={<Safty/>}/>
       <Route path='/Emergency' element={<Emergency/>}/>
       <Route path='/Dashboard' element={<Dashboard/>}/>
+      <Route path='/Community' element={<Community/>}/>
      </Routes>
        {/* Only show footer if modal is closed */}
       {!showSignup && <Footer />}
