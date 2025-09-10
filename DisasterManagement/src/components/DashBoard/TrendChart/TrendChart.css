@@ -1,0 +1,29 @@
+.trend-chart-container {
+    background: #fff;
+    border-radius: 16px;
+    padding: 10px;
+    margin: 20px 0;
+    max-width: 600px;
+}
+
+.trend-chart-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ff4c4c 30%, #4c9aff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.recharts-legend-wrapper {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.recharts-tooltip-wrapper {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

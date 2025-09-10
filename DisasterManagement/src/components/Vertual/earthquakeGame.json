@@ -1,0 +1,228 @@
+{
+  "player": {
+    "health": 100,
+    "trust": 50,
+    "supplies": 0
+  },
+  "scenes": {
+    "1": {
+      "description": "You’re in a 3rd-floor classroom of your college when a massive earthquake hits. The room shakes, windows crack, students scream. What do you do?",
+      "choices": [
+        {
+          "text": "Drop under your desk, cover, and hold on.",
+          "effects": { "health": 0, "trust": 5, "supplies": 0 },
+          "nextScene": "2A"
+        },
+        {
+          "text": "Rush for the stairwell immediately.",
+          "effects": { "health": -10, "trust": 0, "supplies": 0 },
+          "nextScene": "2B"
+        },
+        {
+          "text": "Grab the emergency radio from the cabinet.",
+          "effects": { "health": -20, "trust": 10, "supplies": 1 },
+          "nextScene": "2C"
+        }
+      ]
+    },
+
+    "2A": {
+      "description": "The quake subsides. Dust fills the room, but the building stands. The stairwell outside is jammed with panicking students.",
+      "choices": [
+        {
+          "text": "Push through the crowd to escape first.",
+          "effects": { "health": -10, "trust": -20, "supplies": 0 },
+          "nextScene": "3A1"
+        },
+        {
+          "text": "Calm the crowd and lead them slowly.",
+          "effects": { "health": 0, "trust": 20, "supplies": 0 },
+          "nextScene": "3A2"
+        },
+        {
+          "text": "Break a window and try climbing down via pipes.",
+          "effects": { "health": -15, "trust": -5, "supplies": 0 },
+          "nextScene": "3A3"
+        }
+      ]
+    },
+
+    "2B": {
+      "description": "You rush to the stairs. A teacher is trapped under debris. Students push from behind in panic.",
+      "choices": [
+        {
+          "text": "Help the teacher out before escaping.",
+          "effects": { "health": -10, "trust": 25, "supplies": 0 },
+          "nextScene": "3B1"
+        },
+        {
+          "text": "Abandon the teacher and move ahead.",
+          "effects": { "health": 0, "trust": -20, "supplies": 0 },
+          "nextScene": "3B2"
+        },
+        {
+          "text": "Call for other students to help while you guide evacuation.",
+          "effects": { "health": -5, "trust": 10, "supplies": 0 },
+          "nextScene": "3B3"
+        }
+      ]
+    },
+
+    "2C": {
+      "description": "You limp into the courtyard with the radio. Alarms ring, dust fills the air, injured students cry out for help.",
+      "choices": [
+        {
+          "text": "Use first aid on the wounded.",
+          "effects": { "health": 0, "trust": 20, "supplies": -1 },
+          "nextScene": "3C1"
+        },
+        {
+          "text": "Organize students into groups for safety.",
+          "effects": { "health": -5, "trust": 15, "supplies": 0 },
+          "nextScene": "3C2"
+        },
+        {
+          "text": "Head to the principal’s office to grab supplies.",
+          "effects": { "health": -30, "trust": 0, "supplies": 3 },
+          "nextScene": "3C3"
+        }
+      ]
+    },
+
+    "3A1": {
+      "description": "You push through the crowd. A stampede injures many, and others distrust you.",
+      "choices": [
+        {
+          "text": "Continue outside alone.",
+          "effects": { "health": 0, "trust": 0, "supplies": 0 },
+          "nextScene": "4A1"
+        }
+      ]
+    },
+
+    "3A2": {
+      "description": "You calm the crowd. Students follow you down carefully, though some fall in aftershocks.",
+      "choices": [
+        {
+          "text": "Lead them to the courtyard.",
+          "effects": { "health": 0, "trust": 10, "supplies": 0 },
+          "nextScene": "4A2"
+        }
+      ]
+    },
+
+    "3A3": {
+      "description": "You escape through a window. A few follow, but you leave many behind.",
+      "choices": [
+        {
+          "text": "Find shelter outside.",
+          "effects": { "health": 0, "trust": 0, "supplies": 0 },
+          "nextScene": "4A3"
+        }
+      ]
+    },
+
+    "3B1": {
+      "description": "You lift debris and help the teacher. Students see your courage.",
+      "choices": [
+        {
+          "text": "Help guide everyone to safety.",
+          "effects": { "health": 0, "trust": 10, "supplies": 0 },
+          "nextScene": "4B1"
+        }
+      ]
+    },
+
+    "3B2": {
+      "description": "You abandon the teacher. You survive, but whispers spread.",
+      "choices": [
+        {
+          "text": "Reach the courtyard alone.",
+          "effects": { "health": 0, "trust": -10, "supplies": 0 },
+          "nextScene": "4B2"
+        }
+      ]
+    },
+
+    "3B3": {
+      "description": "You call others to help. The teacher is saved, though chaos remains.",
+      "choices": [
+        {
+          "text": "Exit with the group.",
+          "effects": { "health": 0, "trust": 5, "supplies": 0 },
+          "nextScene": "4B3"
+        }
+      ]
+    },
+
+    "3C1": {
+      "description": "You tend to the injured. Students gather around you for support.",
+      "choices": [
+        {
+          "text": "Stay with them until rescue arrives.",
+          "effects": { "health": 0, "trust": 10, "supplies": 0 },
+          "nextScene": "4C1"
+        }
+      ]
+    },
+
+    "3C2": {
+      "description": "You organize a small camp in the courtyard. People feel safer.",
+      "choices": [
+        {
+          "text": "Maintain order and wait.",
+          "effects": { "health": 0, "trust": 10, "supplies": 0 },
+          "nextScene": "4C2"
+        }
+      ]
+    },
+
+    "3C3": {
+      "description": "You gather food, water, and a flashlight. But your injury worsens.",
+      "choices": [
+        {
+          "text": "Give supplies to others before collapsing.",
+          "effects": { "health": -100, "trust": 20, "supplies": 0 },
+          "nextScene": "4C3"
+        }
+      ]
+    },
+
+    "4A1": {
+      "description": "Alone and Distrusted",
+      "ending": true
+    },
+    "4A2": {
+      "description": "Trusted Student Leader",
+      "ending": true
+    },
+    "4A3": {
+      "description": "Survivor with Losses",
+      "ending": true
+    },
+    "4B1": {
+      "description": "Hero and Volunteer",
+      "ending": true
+    },
+    "4B2": {
+      "description": "Survivor with Guilt",
+      "ending": true
+    },
+    "4B3": {
+      "description": "Shaky but Survives",
+      "ending": true
+    },
+    "4C1": {
+      "description": "Respected Healer",
+      "ending": true
+    },
+    "4C2": {
+      "description": "Camp Leader",
+      "ending": true
+    },
+    "4C3": {
+      "description": "Martyr’s Sacrifice",
+      "ending": true
+    }
+  }
+}

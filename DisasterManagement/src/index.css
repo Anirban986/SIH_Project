@@ -1,0 +1,37 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  color: rgb(14, 13, 13);
+  font-family: 'outfit';
+}
+/* Works in Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar:hover{
+  width:15px;
+  
+}
+::-webkit-scrollbar-track {
+  background: #ecf0f1;      /* light background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3498db, #2ecc71);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2980b9, #27ae60);
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3498db #ecf0f1;
+}

@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.emergency-top {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 15px;
+}
+
+.emergency-top h1 {
+  font-size: 70px;
+  margin-bottom: 20px;
+  background: linear-gradient(320deg, blue, rgb(255, 4, 4));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emergency-top p {
+  font-size: 18px;
+  color: rgba(86, 86, 86, 0.922);
+}
+
+.emergency-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-items: center;
+  margin-bottom: 50px;
+}
+
+.emergency-bottom-block {
+  border: 1px solid rgb(147 144 144 / 38%);
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  transition: 0.3s;
+}
+
+.emergency-bottom-block:hover {
+  transform: scale(1.03);
+  border: 1px solid rgb(0, 119, 255);
+}
+
+.block-top {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.block-top-1 {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(254, 217, 217, 0.88);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.block-top-1 img {
+  width: 30px;
+  filter: brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(7491%)
+    hue-rotate(0deg) brightness(97%) contrast(118%);
+}
+
+.block-top-2 h2 {
+  font-size: 17px;
+  font-weight: 600;
+}
+.block-top-2 h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(0, 85, 255);
+}
+
+.block-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.block-bottom p {
+  padding: 10px;
+}
+.block-bottom-call {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  border: 1px solid rgb(147 144 144 / 38%);
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+.block-bottom-call img {
+  width: 18px;
+  margin: 0 5px;
+}
+.block-bottom-call:hover {
+  background-color: rgba(193, 250, 255, 0.653);
+  border: none;
+  cursor: pointer;
+}
+
+.emergency-foot {
+  border: 1px solid rgb(147 144 144 / 38%);
+  max-width: 1000px;
+  border-radius: 15px;
+  margin: 0 auto 50px;
+  padding: 30px;
+}
+
+.emergency-foot-1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.emergency-foot-1 img {
+  width: 30px;
+  filter: brightness(0) saturate(100%) invert(47%) sepia(17%) saturate(1739%)
+    hue-rotate(183deg) brightness(95%) contrast(87%);
+  margin-right: 10px;
+}
+.emergency-foot-1 h2 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.emergency-foot-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-items: center;
+  margin-bottom: 50px;
+}
+.emergency-foot-blocks {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid rgb(147 144 144 / 38%);
+  padding: 10px;
+  border-radius: 10px;
+}
+.block1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.block1 h1 {
+  font-size: 22px;
+  font-weight: 400;
+}
+.brand {
+  font-size: 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
+.para {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.para p {
+  color: rgba(86, 86, 86, 0.922);
+}
+
+.download {
+  display: flex;
+  width: 150px;
+  border: 1px solid rgb(147 144 144 / 38%);
+  padding: 5px 0;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.download:hover {
+  background-color: rgba(193, 250, 255, 0.653);
+  border: none;
+}
+.download img {
+  width: 20px;
+}
+.download p {
+  width: 50%;
+}
+
+
+@media (max-width: 992px) {
+  .emergency-top h1 {
+    font-size: 50px;
+  }
+  .emergency-bottom,
+  .emergency-foot-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .emergency-top h1 {
+    font-size: 40px;
+  }
+  .emergency-top p {
+    font-size: 16px;
+  }
+  .emergency-bottom-block,
+  .emergency-foot-blocks {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .emergency-top h1 {
+    font-size: 28px;
+  }
+  .emergency-top p {
+    font-size: 14px;
+  }
+  .block-top-1 {
+    width: 40px;
+    height: 40px;
+  }
+  .block-top-1 img {
+    width: 22px;
+  }
+  .block-top-2 h2 {
+    font-size: 15px;
+  }
+  .block-top-2 h1 {
+    font-size: 18px;
+  }
+  .block1 h1 {
+    font-size: 18px;
+  }
+}
