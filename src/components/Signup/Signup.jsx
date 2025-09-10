@@ -1,34 +1,34 @@
-import React, { useEffect } from 'react'
-import './Signup.css'
-import close from '../../assets/close.svg'
-function Signup({ onClose }) {   
-  useEffect(() => {
-    document.body.classList.add("blurred");
-    return () => {
-      document.body.classList.remove("blurred");
-    };
-  }, []);
+import React, { useState } from "react";
+import RegisterStudent from "./RegisterStudent";
+import RegisterParent from "./RegisterParent";
+import RegisterTeacher from "./RegisterTeacher";
+import "./SignUp.css";
+
+function SignUp({ isOpen, onClose }) {
+  const [activeTab, setActiveTab] = useState("student");
+
+  if (!isOpen) return null;
 
   return (
     <div className="modal-overlay">
-      <div className="modal">
-        <h2>Create Account</h2>
-        <form className="signup-form">
-          <input  type="text" placeholder="Enter your username" />
-          <input type="email" placeholder="Enter your email" />
-          <input type="password" placeholder="Enter your password" />
-          <button type="submit" className="submit-btn">Sign up</button>
-        </form>
-        <div className="close-btn" onClick={onClose}>
-          x
+      <div className="modal-container">
+        <button className="close-btn" onClick={onClose}>×</button>
+
+        <div className="tab-buttons">
+          <button onClick={() => setActiveTab("student")} className={activeTab === "student" ? "active" : ""}>Register as Student</button>
+          <button onClick={() => setActiveTab("parent")} className={activeTab === "parent" ? "active" : ""}>Register as Parent</button>
+          <button onClick={() => setActiveTab("teacher")} className={activeTab === "teacher" ? "active" : ""}>Register as Teacher</button>
+         
         </div>
-        <div className="more">
-            <div className="login">Already have account? <span>Login</span></div>
-            <div className="forgot-password">Forgot password?</div>
+
+        <div className="tab-content">
+          {activeTab === "student" && <RegisterStudent />}
+          {activeTab === "parent" && <RegisterParent />}
+          {activeTab === "teacher" && <RegisterTeacher />}
         </div>
       </div>
     </div>
   );
 }
 
-export default Signup;
+export default SignUp;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Vertual.css'
 import earthquakeGame from './earthquakeGame.json'
-
+import {easeIn, easeInOut, motion} from "framer-motion"
 import vertual from '../../assets/vertual.svg'
 import earth from '../../assets/earth.svg'
 import fire from '../../assets/fire.svg'
@@ -94,9 +94,13 @@ function Vertual() {
   };
 
   return (
-    <div className='vertual'>
+    <motion.div
+    initial={{opacity:0,y:50}}
+    animate={{opacity:1,y:0}}
+    transition={{duration:0.8, ease:easeInOut}}
+    className='vertual'>
       <div className="vertual-top">
-        <h1>Emergency Drills</h1>
+        <h1>Virtual Drills</h1>
         <p>Practice emergency procedures through interactive simulations</p>
       </div>
 
@@ -214,7 +218,7 @@ function Vertual() {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }
 

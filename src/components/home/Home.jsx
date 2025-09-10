@@ -41,10 +41,11 @@ function Home() {
                 </div>
             </div>
 
-            <div className="section2">
+         {/*  <div className="section2">
                 <Link className='sec-link' to='/Learn' ><div className="button">Start learning</div></Link>
                 <Link className='sec-link' to='/Vertual' ><div className="button-white">Try Emergency Drills</div></Link>
             </div>
+*/}
 
             <div className="section3">
                  <Link className='sec-link' to='/learn' >

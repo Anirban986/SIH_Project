@@ -32,7 +32,7 @@
 .vertual-mid-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: 25px;
   padding: 20px;
   margin-bottom: 50px;
