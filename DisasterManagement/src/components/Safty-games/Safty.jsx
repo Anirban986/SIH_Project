@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect} from 'react'
 import './Safty.css'
 import trophy from '../../assets/trophy.svg'
 import peaple from '../../assets/peaple.svg'
@@ -8,6 +8,42 @@ import gamesData from './gameData'
 import QuizPanel from './QuizPanel'
 
 function Safty() {
+const [user, setUser] = useState(null);
+  useEffect(() => {
+    const checkUser = () => {
+      const token = localStorage.getItem("token");
+      const userName = localStorage.getItem("userName");
+      const role = localStorage.getItem("role"); // get role
+      if (token && userName && role) {
+        setUser({ name: userName, role });
+      } else {
+        setUser(null);
+      }
+    };
+
+    checkUser();
+
+    window.addEventListener("login", checkUser);
+    window.addEventListener("logout", checkUser);
+
+    return () => {
+      window.removeEventListener("login", checkUser);
+      window.removeEventListener("logout", checkUser);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("role");
+    setUser(null);
+    window.dispatchEvent(new Event("logout"));
+    window.location.href = "/";
+  };
+
+  const isStudentParentTeacher = ["student", "parent", "teacher"].includes(user?.role);
+
+
   const [selectedGame, setSelectedGame] = useState(null)
   const [gameScores, setGameScores] = useState({})
 
@@ -76,13 +112,14 @@ function Safty() {
         })}
       </div>
 
-      {selectedGame && (
+      {isStudentParentTeacher && selectedGame && (
         <QuizPanel
           game={selectedGame}
           onClose={() => setSelectedGame(null)}
           onFinish={handleQuizFinish}
         />
-      )}
+      )
+      }
     </div>
   )
 }

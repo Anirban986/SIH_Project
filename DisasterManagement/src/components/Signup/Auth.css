@@ -1,11 +1,11 @@
 /* General form container */
 .auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Heading */

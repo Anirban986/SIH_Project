@@ -1,9 +1,9 @@
-
 {
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for Disastra project",
   "main": "app.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
@@ -13,6 +13,7 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^17.2.2",
     "ejs": "~2.6.1",

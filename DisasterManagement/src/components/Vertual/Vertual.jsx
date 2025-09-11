@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Vertual.css'
 import earthquakeGame from './earthquakeGame.json'
-import {easeIn, easeInOut, motion} from "framer-motion"
+import { easeIn, easeInOut, motion } from "framer-motion"
 import vertual from '../../assets/vertual.svg'
 import earth from '../../assets/earth.svg'
 import fire from '../../assets/fire.svg'
@@ -14,6 +14,42 @@ import play from '../../assets/play.svg'
 import lock from '../../assets/lock.svg'
 
 function Vertual() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const checkUser = () => {
+      const token = localStorage.getItem("token");
+      const userName = localStorage.getItem("userName");
+      const role = localStorage.getItem("role"); // get role
+      if (token && userName && role) {
+        setUser({ name: userName, role });
+      } else {
+        setUser(null);
+      }
+    };
+
+    checkUser();
+
+    window.addEventListener("login", checkUser);
+    window.addEventListener("logout", checkUser);
+
+    return () => {
+      window.removeEventListener("login", checkUser);
+      window.removeEventListener("logout", checkUser);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("role");
+    setUser(null);
+    window.dispatchEvent(new Event("logout"));
+    window.location.href = "/";
+  };
+
+  const isStudentParentTeacher = ["student", "parent", "teacher"].includes(user?.role);
+
+
   // ✅ Drill Data
   const drills = [
     {
@@ -95,10 +131,10 @@ function Vertual() {
 
   return (
     <motion.div
-    initial={{opacity:0,y:50}}
-    animate={{opacity:1,y:0}}
-    transition={{duration:0.8, ease:easeInOut}}
-    className='vertual'>
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: easeInOut }}
+      className='vertual'>
       <div className="vertual-top">
         <h1>Virtual Drills</h1>
         <p>Practice emergency procedures through interactive simulations</p>
@@ -185,8 +221,7 @@ function Vertual() {
         ))}
       </div>
 
-      {/* ✅ Game Panel */}
-      {showGame && (
+      {isStudentParentTeacher && showGame && (
         <div className="game-panel">
           <div className="game-content">
             {/* Player Stats */}
@@ -218,6 +253,8 @@ function Vertual() {
           </div>
         </div>
       )}
+
+
     </motion.div>
   )
 }

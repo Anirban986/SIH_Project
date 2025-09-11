@@ -128,3 +128,26 @@
     text-decoration: none;
     color: black
 }
+
+.logout-btn{
+    background: linear-gradient(265deg, blue, rgb(73, 203, 255));
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 10px 10px;
+    margin: 8px 20px;
+    color: white;
+    transition: 0.5s;
+    width:75px;
+}
+.logout-btn:hover{
+    background-color: rgba(117, 255, 255, 0.79);
+    cursor: pointer;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    
+}
+.user-name{
+    font-size: 15px;
+}

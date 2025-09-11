@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import './Navbar.css';
 import home from '../../assets/home.svg';
 import alerts from '../../assets/alerts.svg';
@@ -12,6 +12,44 @@ import SignUp from '../Signup/Signup'; // adjust path
 
 function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [user, setUser] = useState(null); // store logged-in user info
+
+  // Check localStorage on mount
+ useEffect(() => {
+  const checkUser = () => {
+    const token = localStorage.getItem("token");
+    const userName = localStorage.getItem("userName");
+    const role = localStorage.getItem("role"); // ✅ get role
+    if (token && userName && role) {
+      setUser({ name: userName , role });
+    } else {
+      setUser(null);
+    }
+  };
+
+  // Run on mount
+  checkUser();
+
+  // Listen for login/logout events
+  window.addEventListener("login", checkUser);
+  window.addEventListener("logout", checkUser);
+
+  // Clean up
+  return () => {
+    window.removeEventListener("login", checkUser);
+    window.removeEventListener("logout", checkUser);
+  };
+}, []);
+
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("userName");
+  localStorage.removeItem("role"); // ✅ clear role
+  setUser(null);
+  window.dispatchEvent(new Event("logout")); // notify navbar
+  window.location.href = "/";
+};
+
 
   return (
     <div className="navbar">
@@ -74,6 +112,8 @@ function Navbar() {
           </li>
         </NavLink>
 
+
+       {user?.role==="admin" && (
         <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
           <li className="list-items">
             <div className="navmenu-list">
@@ -82,11 +122,18 @@ function Navbar() {
             </div>
           </li>
         </NavLink>
+       )}     
+       
       </ul>
 
-      {/* Sign Up button opens modal */}
-      <div className="signup" onClick={() => setIsModalOpen(true)}>Sign up</div>
-
+      <div className="navbar-right">
+        {user && <span className="user-name"> {user.name}</span>}
+        {user ? (
+          <div className="btn logout-btn" onClick={handleLogout}>Log Out</div>
+        ) : (
+          <div className="signup" onClick={() => setIsModalOpen(true)}>Sign Up</div>
+        )}
+      </div>
       {/* The SignUp modal */}
       <SignUp isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
