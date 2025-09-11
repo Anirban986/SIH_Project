@@ -9,6 +9,9 @@ import DrillPerformancePie from "../DrillPerformancePie/DrillPerformancePie";
 import BarChart from "../BarChart/BarChart";
 import DataTable from "../DataTable/DataTable"
 export default function Dashboard() {
+  const [showPortal, setShowPortal] = useState(false);
+  const [message, setMessage] = useState("");
+  const [severity, setSeverity] = useState("low");
   const mockData = [
     { id: 1, state: "Maharashtra", type: "College", students: 1200, drills: 2, preparedness: 92 },
     { id: 2, state: "Maharashtra", type: "School", students: 800, drills: 1, preparedness: 88 },
@@ -24,12 +27,12 @@ export default function Dashboard() {
     period: "6 Months",
   });
 
-  
+
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
   };
 
- 
+
   const filteredData = useMemo(() => {
     return mockData.filter((item) => {
       return (
@@ -38,6 +41,23 @@ export default function Dashboard() {
       );
     });
   }, [filters]);
+  const handleSend = async () => {
+    if (!message) return alert("Message cannot be empty");
+    try {
+      const res = await fetch("http://localhost:5000/api/alerts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message, severity }),
+      });
+      const data = await res.json();
+      console.log("✅ Alert sent:", data);
+      setMessage("");
+      setSeverity("low");
+      setShowPortal(false);
+    } catch (err) {
+      console.error("❌ Error sending alert:", err);
+    }
+  };
 
   const totalInstitutions = filteredData.length;
   const totalStudents = filteredData.reduce((sum, i) => sum + i.students, 0);
@@ -62,6 +82,34 @@ export default function Dashboard() {
             <img src={schedule} alt="" />
             <p>Schedule Drill</p>
           </div>
+
+          <div className="send-alert-button" onClick={() => setShowPortal(true)}>
+            Send Alert
+          </div>
+          {showPortal && (
+            <div className="alert-portal-overlay">
+              <div className="alert-portal">
+                <h2>Send Alert</h2>
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Type your alert..."
+                />
+                <select
+                  value={severity}
+                  onChange={(e) => setSeverity(e.target.value)}
+                >
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+                <div className="portal-buttons">
+                  <button onClick={handleSend}>Send</button>
+                  <button onClick={() => setShowPortal(false)}>Cancel</button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -95,11 +143,11 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="barchart">
-        <BarChart/>
+        <BarChart />
       </div>
-     <div>
-      <DataTable filters={filters} />
-    </div>
+      <div>
+        <DataTable filters={filters} />
+      </div>
     </div>
   );
 }

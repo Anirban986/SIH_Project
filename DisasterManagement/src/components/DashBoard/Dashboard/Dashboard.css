@@ -122,6 +122,64 @@
   font-weight: bold;
 }
 
+.admin-dashboard {
+  padding: 20px;
+}
+
+.send-alert-button {
+  margin: 10px 0;
+  padding: 10px;
+  background: #4c00ff;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.alert-portal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-portal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.alert-portal textarea {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+  resize: none;
+  padding: 5px;
+}
+
+.alert-portal select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.portal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portal-buttons button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
 /* Responsive */
 @media (max-width: 900px) {
   .charts {
