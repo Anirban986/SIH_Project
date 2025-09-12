@@ -1,4 +1,4 @@
-// src/components/IndiaDisasterMap.jsx
+
 import React, { useEffect, useState, useMemo } from "react";
 import {
   MapContainer,
@@ -13,28 +13,18 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./IndiaDisasterMap.css";
 
-/*
-  NOTES:
-  - This component fetches several Data.gov.in endpoints you provided.
-  - It tries to robustly parse both point-records (with lat/long fields)
-    and GeoJSON-like geometry fields (if present).
-  - For production, move the API key into an env var.
-*/
-
-/* ----------------- Config / API URLs ----------------- */
-/* Replace these constants with env-var-based strings in prod. */
 
 const API_LINKS = [
-  // Use whichever endpoints you have; included examples (use the URLs you provided)
+
   "https://api.data.gov.in/resource/ee545453-ed04-43f7-9a2a-816799a67445?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json",
   "https://api.data.gov.in/resource/3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json",
   "https://api.data.gov.in/resource/89e449ee-6820-4503-8f42-960711cdfcaa?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json",
-  // Add or remove URLs as needed (the 11bb... one you tested earlier might be unreliable)
+
 ];
 
-/* ----------------- Small helpers ----------------- */
 
-// create small emoji markers
+
+
 const iconFactory = (emoji) =>
   new L.DivIcon({
     html: `<div class="emoji-marker">${emoji}</div>`,
@@ -48,15 +38,11 @@ const hospitalIcon = iconFactory("🏥");
 const policeIcon = iconFactory("👮");
 const reliefIcon = iconFactory("⛺");
 
-/**
- * Try to extract lat/lon from a data record.
- * Handles common keys: latitude, longitude, lat, lon, geom/geometry
- * Returns null if not found.
- */
+
 function extractLatLon(record) {
   if (!record) return null;
 
-  // numeric lat/lon fields
+
   const latKeys = ["latitude", "lat", "Latitude", "LAT", "y"];
   const lonKeys = ["longitude", "lon", "Longitude", "LON", "x"];
 
@@ -73,7 +59,7 @@ function extractLatLon(record) {
     }
   }
 
-  // Sometimes coordinates are in a single field like "geom","the_geom" or "location"
+ 
   const geomKeys = ["geometry", "geom", "the_geom", "location", "geojson"];
   for (let gk of geomKeys) {
     const v = record[gk];

@@ -53,3 +53,42 @@
 .learning-top-block-texts h1{
  font-size: 20px;
 }
+
+.learning-top-login{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+.chatbot-trigger{
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   background-color: #007bff;
+   color: white;
+   border-radius: 5px;
+   padding: 15px;
+   transition: 0.3s;
+}
+
+.chatbot-trigger:hover{
+     background-color: #a5fcff;
+    cursor: pointer;
+    border: none;
+     color: rgb(0, 0, 0);
+}
+.learning-top-login-seg1{
+    padding: 0 30px;
+}
+.learning-top-login-seg1 h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+    background: linear-gradient(276deg, blue, rgb(255, 4, 4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.disastrabot{
+    padding: 0 50px;
+}
