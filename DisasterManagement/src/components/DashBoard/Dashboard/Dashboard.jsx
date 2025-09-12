@@ -83,7 +83,7 @@ export default function Dashboard() {
             <p>Schedule Drill</p>
           </div>
 
-          <div className="send-alert-button" onClick={() => setShowPortal(true)}>
+          <div className="export" onClick={() => setShowPortal(true)}>
             Send Alert
           </div>
           {showPortal && (

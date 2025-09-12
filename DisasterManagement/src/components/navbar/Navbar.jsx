@@ -9,7 +9,7 @@ import game from '../../assets/game.svg';
 import dashboard from '../../assets/dashboard.svg';
 import { NavLink } from 'react-router';
 import SignUp from '../Signup/Signup'; // adjust path
-
+import logo2 from '../../assets/logo2.svg';
 function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
    const [user, setUser] = useState(null); // store logged-in user info
@@ -54,7 +54,7 @@ const handleLogout = () => {
   return (
     <div className="navbar">
       <div className="logo">
-        <img src="" alt="Logo" />
+        <img src="" alt="" />
       </div>
 
       <ul className="navmenu">
@@ -98,7 +98,7 @@ const handleLogout = () => {
           <li className="list-items">
             <div className="navmenu-list">
               <img className="navmenu-img" src={game} alt="" />
-              <h1>Safety Games</h1>
+              <h1>Survival Quizes</h1>
             </div>
           </li>
         </NavLink>

@@ -11,6 +11,7 @@ import peaple from '../../assets/peaple.svg';
 import { Link } from 'react-router';
 import IndiaDisasterMap from '../intaractiveMap/IndiaDisasterMap';
 import Weather from '../weather/Weather';
+import { motion } from "framer-motion"
 
 function Home() {
     const [user, setUser] = useState(null);
@@ -48,9 +49,14 @@ function Home() {
     };
 
     const isStudentParentTeacher = ["student", "parent", "teacher"].includes(user?.role);
-    const isStudentParentTeacheradmin = ["student", "parent", "teacher","admin"].includes(user?.role);
+    const isStudentParentTeacheradmin = ["student", "parent", "teacher", "admin"].includes(user?.role);
     return (
-        <div className='home'>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className='home'
+        >
             <div className="hero">
                 <h1>Empowering Schools and Colleges with <span>Disaster Preparedness</span></h1>
                 <p>Interactive learning platform for Indian schools and colleges to build disaster resilience through education, virtual drills, and gamified safety training.</p>
@@ -122,7 +128,7 @@ function Home() {
                     <Weather />
                 </div>
             )}
-        </div>
+        </motion.div>
     );
 }
 

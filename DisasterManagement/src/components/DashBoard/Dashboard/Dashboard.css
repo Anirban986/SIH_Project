@@ -126,58 +126,125 @@
   padding: 20px;
 }
 
-.send-alert-button {
-  margin: 10px 0;
-  padding: 10px;
-  background: #4c00ff;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  border-radius: 5px;
-}
 
+/* Overlay background */
 .alert-portal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* dark blur background */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
 
+/* Modal container */
 .alert-portal {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
+  background: #fff;
+  padding: 2rem;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
 }
 
+/* Heading */
+.alert-portal h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+/* Textarea */
 .alert-portal textarea {
   width: 100%;
-  height: 80px;
-  margin-bottom: 10px;
+  height: 100px;
   resize: none;
-  padding: 5px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease;
 }
 
+.alert-portal textarea:focus {
+  border-color: #007bff;
+}
+
+/* Select dropdown */
 .alert-portal select {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 5px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.2s ease;
 }
 
+.alert-portal select:focus {
+  border-color: #007bff;
+}
+
+/* Buttons container */
 .portal-buttons {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
+/* Buttons */
 .portal-buttons button {
-  padding: 5px 10px;
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
+
+/* Send button */
+.portal-buttons button:first-child {
+  background: #007bff;
+  color: #fff;
+}
+
+.portal-buttons button:first-child:hover {
+  background: #0056b3;
+}
+
+/* Cancel button */
+.portal-buttons button:last-child {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.portal-buttons button:last-child:hover {
+  background: #ddd;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 /* Responsive */

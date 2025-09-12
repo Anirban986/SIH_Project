@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import "./Alerts.css";
+import sos from '../../assets/sos.svg'
 import alert from '../../assets/alert.svg'
 const socket = io("http://localhost:5000");
-
+import { motion } from "framer-motion"
 export default function Alerts() {
   const [user, setUser] = useState(null);
   const [alerts, setAlerts] = useState([]);
@@ -58,12 +59,17 @@ export default function Alerts() {
   // If user is not logged in, show a prompt
   if (!user) {
     return (
-      <div className='alerts'>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className='alerts'
+      >
         <div className="alert-top">
           <h1>Alert Center</h1>
-          <p>Real-time disaster alerts and warnings for educational institutions</p>
+          <p>Real-time disaster alerts and warnings</p>
         </div>
-        
+
         <div className="alert-bottom">
           <div className="alert-img">
             <img src={alert} alt="Alert Icon" /> {/* ✅ Now defined */}
@@ -71,33 +77,46 @@ export default function Alerts() {
           <h1>Login for Real-time Alerts</h1>
           <p>Sign in to receive personalized disaster alerts and notifications.</p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   // Logged-in view
   return (
-    <div className="user-alerts">
-      <h1>
-        Disaster Alerts <span className="notif-counter">({notificationCount})</span>
-      </h1>
-
-      {alerts.map((alert) => (
-        <div key={alert._id} className={`alert-box ${alert.severity}`}>
-          <span>
-            [{new Date(alert.timestamp).toLocaleTimeString()}] {alert.message}
-          </span>
-          <button
-            className="close-btn"
-            onClick={() => {
-              setAlerts((prev) => prev.filter((a) => a._id !== alert._id));
-              setNotificationCount((prev) => (prev > 0 ? prev - 1 : 0));
-            }}
-          >
-            ✖
-          </button>
+    <>
+      <div className="alert-top-login">
+        <div className="alert-top-login-seg1">
+          <h1>Alert Center</h1>
+          <p>Real-time disaster alerts and warnings </p>
         </div>
-      ))}
-    </div>
+        <div className="alert-top-login-seg2">
+         <img src={sos} alt="" />
+          <p>SOS</p>
+        </div>
+      </div>
+      <div
+        className="user-alerts">
+        <h1>
+          Disaster Alerts <span className="notif-counter">({notificationCount})</span>
+        </h1>
+
+        {alerts.map((alert) => (
+          <div key={alert._id} className={`alert-box ${alert.severity}`}>
+            <span>
+              [{new Date(alert.timestamp).toLocaleTimeString()}] {alert.message}
+            </span>
+            <button
+              className="close-btn"
+              onClick={() => {
+                setAlerts((prev) => prev.filter((a) => a._id !== alert._id));
+                setNotificationCount((prev) => (prev > 0 ? prev - 1 : 0));
+              }}
+            >
+              ✖
+            </button>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

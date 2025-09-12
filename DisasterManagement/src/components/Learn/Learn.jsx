@@ -4,9 +4,14 @@ import achievement from '../../assets/achievement.svg'
 import trophy from '../../assets/trophy.svg'
 import clock from '../../assets/clock.svg'
 import LearningNav from '../learning-folder/learning-nav/LearningNav'
+import { motion } from "framer-motion"
 function Learn() {
   return (
-    <div className='learn'>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      className='learn'>
       <div className="learning-top">
         <h1>Learning Center</h1>
         <p>Interactive disaster preparedness modules for Educational Institutions</p>
@@ -42,12 +47,13 @@ function Learn() {
             <h1>1h</h1>
           </div>
         </div>
+        
       </div>
-      
-      <LearningNav/>
 
-      
-    </div>
+      <LearningNav />
+
+
+    </motion.div>
   )
 }
 

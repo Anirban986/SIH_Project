@@ -3,9 +3,15 @@ import './Emergency.css'
 import call from '../../assets/call.svg'
 import learn from '../../assets/learn.svg'
 import download from '../../assets/download.svg'
+import { motion } from "framer-motion"
+import { easeInOut } from "framer-motion";
 function Emergency() {
   return (
-    <div className='emergency'>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: easeInOut }} 
+      className='emergency'>
       <div className="emergency-top">
         <h1>Emergency Contacts</h1>
         <p>Important emergency numbers for India</p>
@@ -151,7 +157,7 @@ function Emergency() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

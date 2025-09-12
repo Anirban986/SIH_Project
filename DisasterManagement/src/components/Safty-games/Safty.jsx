@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './Safty.css'
 import trophy from '../../assets/trophy.svg'
 import peaple from '../../assets/peaple.svg'
@@ -6,9 +6,10 @@ import achievement from '../../assets/achievement.svg'
 import gameIcon from '../../assets/game.svg'
 import gamesData from './gameData'
 import QuizPanel from './QuizPanel'
+import { motion } from "framer-motion"
 
 function Safty() {
-const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
   useEffect(() => {
     const checkUser = () => {
       const token = localStorage.getItem("token");
@@ -50,16 +51,20 @@ const [user, setUser] = useState(null);
   const handleQuizFinish = (gameId, score) => {
     setGameScores(prev => ({
       ...prev,
-      [gameId]: score 
+      [gameId]: score
     }))
     setSelectedGame(null)
   }
 
   return (
-    <div className='safty'>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }} 
+      className='safty'>
       <div className="safty-top">
-        <h1>Safety Games</h1>
-        <p>Learn disaster preparedness through fun and engaging games</p>
+        <h1>Survival Quizes</h1>
+        <p>Learn disaster preparedness through fun and engaging Quizes</p>
       </div>
 
       <div className="safty-container">
@@ -120,7 +125,7 @@ const [user, setUser] = useState(null);
         />
       )
       }
-    </div>
+    </motion.div>
   )
 }
 

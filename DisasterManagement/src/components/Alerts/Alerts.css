@@ -74,6 +74,7 @@
   .alert-top h1 {
     font-size: 50px;
   }
+
   .alert-top p {
     font-size: 16px;
     width: 90%;
@@ -84,19 +85,24 @@
   .alert-top h1 {
     font-size: 38px;
   }
+
   .alert-top p {
     font-size: 15px;
   }
+
   .alert-img {
     width: 70px;
     height: 70px;
   }
+
   .alert-img img {
     width: 40px;
   }
+
   .alert-bottom h1 {
     font-size: 20px;
   }
+
   .alert-bottom p {
     font-size: 14px;
     margin-bottom: 100px;
@@ -107,24 +113,30 @@
   .alert-top h1 {
     font-size: 28px;
   }
+
   .alert-top p {
     font-size: 14px;
   }
+
   .alert-img {
     width: 60px;
     height: 60px;
   }
+
   .alert-img img {
     width: 32px;
   }
+
   .alert-bottom h1 {
     font-size: 18px;
   }
+
   .alert-bottom p {
     font-size: 13px;
     margin-bottom: 60px;
   }
 }
+
 .user-alerts {
   padding: 20px;
 }
@@ -156,7 +168,8 @@
   align-items: center;
   transition: 0.3s;
 }
-.alert-box:hover{
+
+.alert-box:hover {
   transform: scale(1.01);
   cursor: pointer;
   border: 1px solid rgba(113, 113, 113, 0.66);
@@ -186,6 +199,46 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.close-btn:hover{
+
+.close-btn:hover {
   background-color: rgba(176, 248, 255, 0.823);
+}
+
+.alert-top-login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.alert-top-login-seg1 h1 {
+  margin: 0;
+  font-size: 30px;
+  background: linear-gradient(353deg, blue, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.alert-top-login-seg1 p {
+  color: rgba(86, 86, 86, 0.922);
+}
+.alert-top-login-seg2 img{
+   width: 20px;
+    filter: brightness(0) invert(1);
+}
+.alert-top-login-seg2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.alert-top-login-seg2:hover {
+  background-color: #4aa1ff;
+  cursor: pointer;
 }
